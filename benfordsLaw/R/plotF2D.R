@@ -6,7 +6,7 @@
 #' @return Returns a plot
 #' @export
 #' @examples
-#' plotFD(benfordFirstTwoDigit(iris$Sepal.Width))
+#' plotF2D(benfordFirstTwoDigit(iris$Sepal.Width))
 
 plotF2D <- function(firstTwoDigitdf) {
   require(ggplot2)

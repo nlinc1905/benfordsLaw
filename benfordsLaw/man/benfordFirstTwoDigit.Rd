@@ -22,4 +22,3 @@ test results, as well as the overall mean absolute deviation (MAD).
 \examples{
 benfordFirstTwoDigit(iris$Sepal.Width, returnValue='list')
 }
-

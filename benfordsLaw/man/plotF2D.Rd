@@ -17,6 +17,5 @@ This function plots Benford's first two digit test results as expected vs observ
 digit frequencies.
 }
 \examples{
-plotFD(benfordFirstTwoDigit(iris$Sepal.Width))
+plotF2D(benfordFirstTwoDigit(iris$Sepal.Width))
 }
-

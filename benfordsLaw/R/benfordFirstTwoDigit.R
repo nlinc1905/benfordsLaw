@@ -25,7 +25,7 @@ benfordFirstTwoDigit <- function(columnToTest, returnValue='dataframe') {
   #Expected ratios according to Benford's Law
   firstTwoDigitBenford <- vector()
   for (i in 1:99) {
-    firstTwoDigitBenford[i] <- log((1+(10*as.numeric(substring(i, 1, 1))+as.numeric(substring(i, 2, 2)))), 10)
+    firstTwoDigitBenford[i] <- log((1+(1/(10*as.numeric(substring(i, 1, 1))+as.numeric(substring(i, 2, 2))))), 10)
   }
   names(firstTwoDigitBenford) <- c(1:99)
 
@@ -59,10 +59,10 @@ benfordFirstTwoDigit <- function(columnToTest, returnValue='dataframe') {
   firstTwoDigitTests <- abs(firstTwoDigitZ) > zCrit
   
   #Combine the expected vs observed frequencies and ratios of each digit and calculate MAD values
-  firstTwoDigitObserved <- firstTwoDigitFrequency
-  firstTwoDigitExpected <- firstTwoDigitBenford*rowCount
+  firstTwoDigitObservedFreq <- firstTwoDigitFrequency
+  firstTwoDigitExpectedFreq <- firstTwoDigitBenford*rowCount
   ftindexValue <- as.factor(c(10:99))
-  firstTwoDigitResults <- data.frame(ftindexValue, firstTwoDigitObserved, firstTwoDigitExpected, firstTwoDigitTests)
+  firstTwoDigitResults <- data.frame(ftindexValue, firstTwoDigitObservedFreq, firstTwoDigitExpectedFreq, firstTwoDigitTests)
   colnames(firstTwoDigitResults) <- c('First_Two_Digits', 'Observed_Frequency', 'Expected_Frequency', 'Abnormal_Flag')
   firstTwoDigitResults$Perc_Abnormal <- nrow(firstTwoDigitResults[firstTwoDigitResults$Abnormal_Flag==T,])/nrow(firstTwoDigitResults)
   firstTwoDigitResults$Observed_Ratio <- firstTwoDigitObserved

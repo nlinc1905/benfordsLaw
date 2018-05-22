@@ -19,4 +19,3 @@ digit frequencies.
 \examples{
 plotFD(benfordFirstDigit(iris$Sepal.Width))
 }
-

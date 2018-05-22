@@ -2,5 +2,7 @@
 
 export(benfordFirstDigit)
 export(benfordFirstTwoDigit)
+export(benfordLastTwoDigit)
 export(plotF2D)
 export(plotFD)
+export(plotL2D)

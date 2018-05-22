@@ -52,10 +52,10 @@ benfordFirstDigit <- function(columnToTest, returnValue='dataframe') {
   firstDigitTests <- abs(firstDigitZ) > zCrit
   
   #Combine the expected vs observed frequencies and ratios of each digit and calculate MAD values
-  firstDigitObserved <- firstDigitFrequency
-  firstDigitExpected <- firstDigitBenford*rowCount
+  firstDigitObservedFreq <- firstDigitFrequency
+  firstDigitExpectedFreq <- firstDigitBenford*rowCount
   indexValue <- as.factor(c('1','2','3','4','5','6','7','8','9'))
-  firstDigitResults <- data.frame(indexValue, firstDigitObserved, firstDigitExpected, firstDigitTests)
+  firstDigitResults <- data.frame(indexValue, firstDigitObservedFreq, firstDigitExpectedFreq, firstDigitTests)
   colnames(firstDigitResults) <- c('First_Digit', 'Observed_Frequency', 'Expected_Frequency', 'Abnormal_Flag')
   firstDigitResults$Perc_Abnormal <- nrow(firstDigitResults[firstDigitResults$Abnormal_Flag==T,])/nrow(firstDigitResults)
   firstDigitResults$Observed_Ratio <- firstDigitObserved
